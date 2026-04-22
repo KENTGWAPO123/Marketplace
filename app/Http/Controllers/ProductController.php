@@ -107,7 +107,7 @@ class ProductController extends Controller
 
     public function destroy(Product $product)
     {
-        if (Auth::id() !== $product->user_id) {
+        if ((int) Auth::id() !== (int) $product->user_id) {
             abort(403);
         }
 
